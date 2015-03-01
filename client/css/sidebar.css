@@ -1,0 +1,40 @@
+
+.face {
+	-webkit-border-radius: 30px;
+	border-radius: 30px;
+    border: 1px solid #ddd;
+    margin: 16px;
+    -webkit-box-shadow: 0 0 3px 1px rgba(0,0,0,0.3);
+	box-shadow: 0 0 3px 1px rgba(0,0,0,0.3);
+}
+
+md-input-container label {
+	color: black !important;
+	font-weight: bold;
+}
+
+md-content.md-default-theme {
+	background: none !important;
+}
+
+md-input-container.md-default-theme .md-input {
+	border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+#findSession {
+	width: 100%;
+	background: url(../images/mediumgrunge.png);
+}
+
+#findSession section {
+	padding: 20px;
+}
+
+#userList {
+	width: 100%;
+}
+
+#sessionId {
+	margin-left: auto;
+	margin-right: auto;
+}

@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+  <title></title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Angulars Material CSS -->
+    <link rel="stylesheet" href="./js/angular-material/angular-material.css">
+    <!-- UI -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/skeleton.css">
+    <link rel="stylesheet" href="./css/sidebar.css">
+    <link rel="stylesheet" href="./css/chat.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+</head>
+<body ng-app="Application" ng-controller="ApplicationController">
+
+  <div ng-controller="ToastController"></div>
+
+  <!-- Start wrapper -->
+  <section id="wrapper">
+
+    <!-- Start sidebar -->
+    <aside id="sidebar">
+      <div id="findSession">
+        <header><i class="fa fa-search"></i> Find Session</header>
+        <section>
+          <form action="" id="findSessionForm">
+            <md-input-container flex>
+              <label>Please enter your name</label>
+              <input ng-model="user.firstName" placeholder="" id="username">
+            </md-input-container>
+            <md-button class="md-raised md-primary">Find Session</md-button>
+            <br><br>
+          </form>
+        </section>
+      </div>
+
+      <div id="userList">
+        <header><i class="fa fa-user"></i> Users</header>
+        <md-content>
+          <md-list>
+            <md-item ng-repeat="item in userList">
+              <md-item-content>
+                <div class="md-tile-left">
+                    <img ng-src="{{item.face}}" class="face" alt="{{item.username}}">
+                </div>
+                <div class="md-tile-content">
+                  <h3>{{item.username}}</h3>
+                  <p>
+                    ID: {{item.id}}
+                  </p>
+                </div>
+              </md-item-content>
+              <md-divider ng-if="!$last"></md-divider>
+            </md-item>
+          </md-list>
+        </md-content>
+        <div id="sessionId">
+          <div><h6>Session ID:<br>{{sessionId}}</h6></div>
+        </div>
+      </div>
+    </aside>
+    <!-- End sidebar -->
+
+    <!-- Start content -->
+    <article id="content">
+
+      <div id="chat">
+        <header><i class="fa fa-weixin"></i> Chat</header>
+        <textarea id="chatLog" disabled></textarea>
+        <div id="chatMessage">
+          <form action="" id="chatMessageForm">
+            <input id="chatMessageTextbox" autocomplete="off"/>
+            <md-button id="chatMessageButton" class="md-raised md-primary"><i class="fa fa-paper-plane"></i> Send</md-button>
+          </form>
+        </div>
+      </div>
+
+    </article>
+    <!-- End content -->
+
+  </section>
+  <!-- End wrapper -->
+<script>var userList = [];</script>
+
+  <!-- jQuery -->
+  <script src="./js/jquery-1.11.2.min.js"></script>
+  <!-- Socket.io -->
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- Angular -->
+  <script src="./js/angular/angular.min.js"></script>
+  <!-- Angular Material -->
+  <script src="./js/angular-aria/angular-aria.js"></script>
+  <script src="./js/angular-animate/angular-animate.js"></script>
+  <script src="./js/angular-material/angular-material.js"></script>
+
+  <!-- Initialize Angular application and set ngMaterial theme -->
+  <script>
+    // Initialize app
+    var app = angular.module('Application', ['ngMaterial']);
+    // Set material theme
+    app.config(function($mdThemingProvider) {
+      $mdThemingProvider.theme('default')
+        .primaryPalette('green')
+        .accentPalette('light-green');
+    });
+  </script>
+
+  <!-- Toast module -->
+  <script src="./js/toast.js"></script>
+  <!-- Networking -->
+  <script src="./js/networking.js"></script>
+
+  <script>
+    // Set intial sizes of ui elements
+    $(document).ready(function() {
+      setLayoutSkeletonHeight();
+      setUserListHeight();
+      setChatMessageBoxWidth();
+    });
+
+    // Set resized sizes of ui elements
+    $(window).resize(function() {
+      setLayoutSkeletonHeight();
+      setUserListHeight();
+      setChatMessageBoxWidth();
+    });
+
+    function setLayoutSkeletonHeight() {
+      $('#sidebar').height($(window).height());
+      $('#content').height($(window).height());
+    }
+
+    function setUserListHeight() {
+      var windowHeight = $(window).height();
+      var findSessionHeight = $('#findSession').outerHeight();
+      $('#userList').height(windowHeight - findSessionHeight);
+    }
+
+    function setChatMessageBoxWidth() {
+      var chatWidth = $('#chat').width();
+      var textbox = $('#chatMessageTextbox')
+      var buttonWidth = 90;
+      textbox.width(chatWidth - buttonWidth);
+    }
+  </script>
+
+
+</body>
+</html>

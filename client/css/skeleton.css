@@ -1,0 +1,18 @@
+
+#wrapper {
+
+}
+
+
+#sidebar {
+  width: 280px;
+  float: left;
+  background: url(../images/mediumgrunge.png);
+  border-right: 1px solid #333;
+}
+
+#content {
+  position: relative;
+  margin-left: 280px;
+  background: #CCC;
+}

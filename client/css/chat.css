@@ -1,0 +1,34 @@
+
+#chat {
+	background: white;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+#chatLog {
+	width: 100%;
+	min-height: 190px;
+	border: 0;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #ccc;
+}
+
+#chatMessage {
+	position: absolute;
+	bottom: 0;
+	height: 29px;
+	width: 100%;
+}
+
+#chatMessageTextbox {
+	background: white;
+	height: 30px;
+	border: 0;
+	padding: 0;
+	padding-left: 10px;
+}
+
+#chatMessageButton {
+	float: right;
+}
