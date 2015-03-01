@@ -1,3 +1,6 @@
+About:
+This is a lobby system that groups users into sessions of 10. Users can chat to other users in their respective sessions. It's perfect for creating a browser game.
+
 Instructions:
 
 1) Hostname and port need to be configured in /server.js on line 76 & 77. Right now it is configured to run on OpenShift.
