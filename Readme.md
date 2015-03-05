@@ -10,5 +10,5 @@ This is a lobby system that groups users into sessions of 10. Users can chat to 
 3) To run: $ node server.js
 
 
-##Live demo:
-[http://game-vandevca.rhcloud.com](http://game-vandevca.rhcloud.com)
+##Screenshot:
+[http://portfolio-vandevpro.rhcloud.com/wp-content/uploads/2015/03/weblobby-750x437.png](Download)
