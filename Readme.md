@@ -11,4 +11,4 @@ This is a lobby system that groups users into sessions of 10. Users can chat to 
 
 
 ##Screenshot:
-[http://portfolio-vandevpro.rhcloud.com/wp-content/uploads/2015/03/weblobby-750x437.png](Download)
+[Download](http://portfolio-vandevpro.rhcloud.com/wp-content/uploads/2015/03/weblobby-750x437.png)
